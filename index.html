@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+
+  <!--  -->
+  <div id="content">
+    <form action="/turn">
+      <div id="player1" class='player mag'>
+        <ul>
+          <li><input type="radio" name='defend' value='4aynik'/></li>
+          <li><input type="radio" name='defend' value='torso'/></li>
+          <li><input type="radio" name='defend' value='bolls'/></li>
+        </ul>
+      </div>
+
+      <div id="player2" class='player knight'>
+        <ul>
+          <li><input type="radio" name='attack' value='4aynik'/></li>
+          <li><input type="radio" name='attack' value='torso'/></li>
+          <li><input type="radio" name='attack' value='bolls'/></li>
+        </ul>
+      </div>
+      <input type="submit" value='Turn'/>
+    </form>
+
+  </div>
+  <ul id="players">
+
+  </ul>
+  <script type="text/javascript">
+    var iteration = 0;
+    var interval = setInterval(function() {
+      iteration++;
+      var players = document.getElementsByClassName("player");
+      for (var i = 0; i < players.length; i++) {
+        var player = players[i];
+        var animation = 5;
+        player.style.marginTop =  animation + Math.sin(i + iteration) * animation  + "px";
+      }
+    }, 50);
+  </script>
+</body>
+</html>
